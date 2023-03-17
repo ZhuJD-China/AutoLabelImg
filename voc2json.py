@@ -6,21 +6,25 @@ import json
 from tqdm import tqdm
 
 import shutil
+from past.builtins import raw_input
 
 
 def parse_args():
     """
         参数配置
     """
+    xml = raw_input(u"请输入xml文件目录:")
+    img_format = raw_input(u"请输入转换的图片格式:")
+
     parser = argparse.ArgumentParser(description='xml2json')
     parser.add_argument('--raw_label_dir', help='the path of raw label',
-                        default=r'./')
+                        default=xml)
     parser.add_argument('--pic_dir', help='the path of picture',
-                        default=r'./')
+                        default=xml)
     parser.add_argument('--imag_format', help='the path of picture',
-                        default=r'png')
+                        default=img_format)
     parser.add_argument('--save_dir', help='the path of new label',
-                        default=r'./labelme_json')
+                        default=xml + '/labelme_json')
     args = parser.parse_args()
     return args
 

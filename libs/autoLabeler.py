@@ -153,7 +153,9 @@ def run(weights='yolov5s.pt',  # model.pt path(s)
                         plot_one_box(xyxy, im0, label=label, color=colors(c, True), line_thickness=line_thickness)
                         if save_crop:
                             save_one_box(xyxy, im0s, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
-
+            else:
+                with open(txt_path + '.txt', 'a') as f:
+                    f.write('0 0 0 0 0'+'\n')
             # Print time (inference + NMS)
             print(f'{s}Done. ({t2 - t1:.3f}s)')
 

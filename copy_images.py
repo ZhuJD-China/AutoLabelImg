@@ -12,7 +12,11 @@ savePath = raw_input(u"请输入保存目录:")
 
 # paths = ['./']  # 原文件路径
 # savePath = './all_images'  # 目标路径
-postfix = ['.jpg', '.JPG', '.PNG', '.png', '.jpeg', '.JPEG']  # 指定文件后缀名
+# postfix = ['.jpg', '.JPG', '.PNG', '.png', '.jpeg', '.JPEG', '.bmp', '.BMP']  # 指定文件后缀名
+
+postfix_str = raw_input(u"请输入要复制的图片格式:")
+postfix = []
+postfix.append('.' + postfix_str)
 
 if not os.path.exists(savePath):
     os.mkdir(savePath)
