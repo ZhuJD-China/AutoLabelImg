@@ -88,7 +88,7 @@ def main():
             shape['flags'] = {}
             shapes.append(shape)
         json_str['shapes'] = shapes
-        json_str['imagePath'] = img_path
+        json_str['imagePath'] = label_name + '.' + args.imag_format
         json_str['imageData'] = None
         json_str['imageHeight'] = height
         json_str['imageWidth'] = width
